@@ -60,11 +60,6 @@ defmodule Heroicons.Generator do
       end
 
       def unquote(name)(opts) when is_list(opts) do
-        IO.warn(
-          "<%= #{unquote(name)}(class: \"...\" %> is deprecated, " <>
-            "please use <.#{unquote(name)} class=\"...\" /> inside HEEx templates instead"
-        )
-
         attrs =
           for {k, v} <- opts do
             safe_k =
